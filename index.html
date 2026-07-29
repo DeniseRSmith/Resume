@@ -118,6 +118,97 @@
   .metric .num em{color:var(--ember);font-style:normal;}
   .metric .lbl{font-size:12.5px;color:var(--slate);margin-top:6px;line-height:1.4;}
 
+  /* WORKFLOW REDESIGN SPOTLIGHT */
+  .process-spotlight{background:#FFFDF9;}
+  .spotlight-lede{font-size:14px;line-height:1.65;color:var(--slate);margin:0 0 20px;max-width:620px;}
+  .wf-grid{display:grid;grid-template-columns:1fr 220px;gap:32px;align-items:start;}
+  .wf-toggle{display:flex;gap:8px;margin-bottom:16px;}
+  .wf-btn{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.03em;
+    padding:8px 15px;border-radius:20px;border:1px solid var(--line);
+    background:var(--paper-dim);color:var(--graphite);cursor:pointer;
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .wf-btn:hover{border-color:var(--teal);}
+  .wf-btn.active{background:var(--teal-deep);color:#FAF7F1;border-color:var(--teal-deep);}
+  .wf-steps{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .wf-steps[hidden]{display:none;}
+  .wf-steps li{
+    position:relative;padding:7px 12px 7px 38px;font-size:12.5px;color:var(--graphite);
+    border-left:2px solid var(--line);margin-left:11px;transition:border-color .3s ease;
+  }
+  .wf-steps li::before{
+    counter-increment:step;content:counter(step);position:absolute;left:-12px;top:5px;
+    width:19px;height:19px;border-radius:50%;background:var(--paper);border:2px solid var(--slate);
+    color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:9.5px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .wf-steps li:last-child{border-left-color:transparent;}
+  /* before: bottleneck chain — any broken link stops everything downstream */
+  .wf-before li{border-left-color:var(--ember);}
+  .wf-before li::before{border-color:var(--ember-deep);background:#FBEAE0;color:var(--ember-deep);}
+  /* after: condensed, parallel lanes */
+  .wf-after li{border-left-color:var(--teal);border-left-style:dashed;}
+  .wf-after li::before{border-color:var(--teal-deep);background:var(--teal-deep);color:#FAF7F1;}
+  .wf-par{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.05em;
+    text-transform:uppercase;color:var(--teal-deep);margin-left:8px;
+  }
+  .wf-gate{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.05em;
+    text-transform:uppercase;color:var(--ember-deep);margin-left:8px;
+  }
+  .wf-gate-pill{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.03em;
+    text-transform:uppercase;color:var(--ember-deep);background:#FBEAE0;
+    border:1px solid rgba(168,88,28,0.3);border-radius:10px;padding:2px 8px;margin-left:8px;
+  }
+  .wf-win{
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;
+    padding:16px 20px;margin:0 0 18px;border-radius:8px;
+    background:linear-gradient(90deg,rgba(31,138,110,0.12),rgba(217,119,46,0.08));
+    border:1px solid rgba(21,92,74,0.2);
+  }
+  .wf-win-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:var(--ink);}
+  .wf-win-arrow{color:var(--ember);margin:0 4px;}
+  .wf-win-sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.03em;color:var(--teal-deep);}
+  .wf-diagnosis{
+    border:1px dashed rgba(168,88,28,0.35);border-radius:8px;background:#FFF9F2;
+    padding:16px 18px;margin:0 0 22px;
+  }
+  .wf-diagnosis-tag{
+    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--ember-deep);margin-bottom:8px;
+  }
+  .wf-diagnosis p{font-size:13.5px;line-height:1.65;color:var(--graphite);margin:0;}
+  .wf-diagnosis strong{color:var(--ink);}
+  .wf-counterfactual{
+    font-size:12.5px;line-height:1.6;color:var(--slate);font-style:italic;
+    margin:8px 0 0;padding-top:8px;border-top:1px dashed rgba(168,88,28,0.25);
+  }
+  .wf-note{
+    display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.55;
+    border-radius:6px;padding:11px 14px;margin:14px 0 0;
+  }
+  .wf-note-before{background:#FBEAE0;color:var(--ember-deep);border:1px solid rgba(168,88,28,0.25);}
+  .wf-note-after{background:rgba(31,138,110,0.1);color:var(--teal-deep);border:1px solid rgba(21,92,74,0.25);}
+  .wf-stat-box{
+    border:1px solid var(--line);border-radius:8px;padding:20px 18px;background:var(--paper-dim);
+    text-align:center;position:sticky;top:20px;
+  }
+  .wf-stat-num{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:30px;color:var(--ink);transition:opacity .2s ease;}
+  .wf-stat-num.after{color:var(--teal-deep);}
+  .wf-stat-sub{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--slate);margin-top:4px;}
+  .wf-stat-arrow{font-size:13px;color:var(--ember);margin:6px 0;}
+  .wf-stat-lbl{font-size:12px;color:var(--slate);line-height:1.5;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
+  .wf-quote{
+    font-family:'Space Grotesk',sans-serif;font-size:15.5px;font-style:italic;color:var(--ink);
+    margin:22px 0 14px;padding-left:16px;border-left:3px solid var(--ember);
+  }
+  .wf-footnote{font-size:13px;color:var(--graphite);line-height:1.6;}
+  .wf-footnote strong{color:var(--ink);}
+  @media (max-width:640px){.wf-grid{grid-template-columns:1fr;}.wf-stat-box{position:static;}}
+
   /* PARTNERSHIP SPOTLIGHT */
   .spotlight{margin-top:28px;border:1px solid var(--line);border-radius:8px;padding:26px 28px;background:#FFFDF9;}
   .spotlight-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
@@ -319,6 +410,7 @@
     <div class="metric"><div class="num"><em>1st</em></div><div class="lbl">Native Ratings &amp; Reviews integration brokered &amp; launched with Yotpo on the Synchrony Mastercard portfolio</div></div>
     <div class="metric"><div class="num">20 → <em>25%</em></div><div class="lbl">Quote-to-bind ratio lift driven by live coaching across a 4-store Acceptance Insurance cluster</div></div>
     <div class="metric"><div class="num"><em>4</em></div><div class="lbl">Self-directed AI prototypes shipped at ConstructConnect using custom MCP integrations</div></div>
+    <div class="metric"><div class="num"><em>90%</em></div><div class="lbl">Faster speed-to-market from a workflow redesign — same reviews, same rigor, run concurrently</div></div>
   </div>
 </section>
 
@@ -419,9 +511,81 @@
         </div>
         <div class="role-co">Synchrony · Atlanta, GA (Remote)</div>
         <ul>
-          <li>Cut email speed-to-market from 4 weeks to 2, and cycle time from a 28-day SLA to 5 days or less.</li>
+          <li>Redesigned the email production workflow from sequential to concurrent execution, cutting speed-to-market from ~4 weeks to 3–5 days (~90% faster) while preserving every required review and control.</li>
           <li>Executed 343 client email campaigns with a near-zero error rate — a department high.</li>
         </ul>
+
+        <div class="spotlight process-spotlight">
+          <div class="spotlight-head">
+            <h4>Featured case study — disrupt the dependencies, not the requirements</h4>
+            <span class="spotlight-tag">~90% faster speed-to-market</span>
+          </div>
+
+          <div class="wf-win">
+            <div class="wf-win-num">4 weeks <span class="wf-win-arrow">→</span> 3–5 days</div>
+            <div class="wf-win-sub">~90% faster speed-to-market · same required reviews, controls &amp; quality standards</div>
+          </div>
+
+          <p class="spotlight-lede">The old process was a single unbroken chain — 16 handoffs, ~20 steps counting rework loops, and one blocked step stalled every step behind it. Nobody had ever asked which of those 16 steps actually had to happen in order.</p>
+
+          <div class="wf-diagnosis">
+            <span class="wf-diagnosis-tag">The diagnosis — real dependency vs. inherited habit</span>
+            <p>I audited all 16 phases and found only <strong>4 true hard gates</strong> — Data/Segmentation Requirements, Legal Review, Compliance Review, and Final Approval — that legitimately required specific inputs or sign-off before the next step could begin. The other 12 were running in sequence purely because that's how the process had always been built, not because anything required it. <span class="wf-gate">■ hard gate</span> marks the real constraints below; everything else was free to move.</p>
+            <p class="wf-counterfactual">Left unchallenged, that distinction would never have surfaced — the same ~20-step, ~4-week relay would still be running today, campaign after campaign, simply because "that's the process."</p>
+          </div>
+
+          <div class="wf-grid">
+            <div>
+              <div class="wf-toggle" role="tablist" aria-label="Compare sequential and concurrent workflow">
+                <button class="wf-btn" type="button" data-view="before" role="tab" aria-selected="false">Before · Sequential (~20 steps)</button>
+                <button class="wf-btn active" type="button" data-view="after" role="tab" aria-selected="true">After · Concurrent (10 steps) — the result</button>
+              </div>
+
+              <ol class="wf-steps wf-before" id="wf-steps-before" hidden>
+                <li>Request Intake</li>
+                <li>Brief &amp; Strategy</li>
+                <li>Data / Segmentation Requirements<span class="wf-gate-pill">⚠ miss it, campaign cancels</span></li>
+                <li>Content Development</li>
+                <li>Internal Reviews</li>
+                <li>Design &amp; Build</li>
+                <li>Legal Review<span class="wf-gate">■ hard gate</span></li>
+                <li>Compliance Review<span class="wf-gate">■ hard gate</span></li>
+                <li>Proofing</li>
+                <li>Final Approval<span class="wf-gate">■ hard gate</span></li>
+                <li>QA Testing</li>
+                <li>Deployment Prep</li>
+                <li>Schedule &amp; Send</li>
+                <li>Reporting &amp; Analysis</li>
+                <li>Optimization</li>
+                <li>Client Feedback</li>
+              </ol>
+
+              <ol class="wf-steps wf-after" id="wf-steps-after">
+                <li>Request / Intake</li>
+                <li>Brief, Strategy &amp; Content Development<span class="wf-par">∥ parallel</span></li>
+                <li>Data / Segmentation Requirements<span class="wf-gate-pill">■ expedite path available</span></li>
+                <li>Internal Reviews<span class="wf-par">∥ parallel</span></li>
+                <li>Design &amp; Build<span class="wf-par">∥ parallel</span></li>
+                <li>Legal &amp; Compliance Review<span class="wf-gate">■ hard gate — kept sequential</span></li>
+                <li>Proofing &amp; Final Approval<span class="wf-gate">■ hard gate — kept sequential</span></li>
+                <li>QA Testing &amp; Deployment Prep<span class="wf-par">∥ parallel</span></li>
+                <li>Schedule &amp; Send<span class="wf-par">∥ parallel</span></li>
+                <li>Reporting, Analysis, Optimization &amp; Feedback<span class="wf-par">∥ parallel</span></li>
+              </ol>
+
+              <p class="wf-note wf-note-after" id="wf-note">✅ &nbsp;<span>A delay in one lane no longer stalls the rest. Missing segmentation data triggered a pre-agreed expedite path instead of a cancellation — other campaigns shifted to accommodate it, with the concessions known upfront.</span></p>
+            </div>
+            <div class="wf-stat-box">
+              <div class="wf-stat-num after" id="wf-stat-num">3–5 days</div>
+              <div class="wf-stat-sub" id="wf-stat-sub">10 steps · parallel lanes</div>
+              <div class="wf-stat-arrow">↑</div>
+              <div class="wf-stat-lbl" id="wf-stat-lbl">Same required reviews, controls &amp; quality standards — now running concurrently.</div>
+            </div>
+          </div>
+
+          <p class="wf-quote">"Working smarter isn't always doing less. Sometimes it's seeing the work differently."</p>
+          <div class="wf-footnote"><strong>Client impact:</strong> the 4 real hard gates stayed fully intact — every required review, control, and quality standard was preserved. Missing segmentation data no longer meant cancellation: a pre-agreed expedite path let other campaigns in the portfolio shift to accommodate it, with the concessions and exceptions known upfront rather than improvised. Clients valued the speed and responsiveness so much that elements of the expedited workflow were adopted into the standard process.</div>
+        </div>
       </div>
 
       <div class="role">
@@ -562,7 +726,7 @@
 (function(){
   var stageData = {
     acquisition: {num:"1 \u2192 3", label:"Acquisition", desc:"Founding team member on the Synchrony Mastercard launch \u2014 grew the portfolio from 1 product in year one to 3 products as the business scaled."},
-    onboarding:  {num:"5 days", label:"Onboarding", desc:"Cut email speed-to-market from 4 weeks to 2, and cycle time from a 28-day SLA to 5 days \u2014 letting clients mirror in-store offers in near real time. Executed 343 campaigns at a near-zero error rate, a department high."},
+    onboarding:  {num:"3\u20135 days", label:"Onboarding", desc:"Redesigned the email production workflow from sequential to concurrent execution \u2014 cutting speed-to-market from ~4 weeks to 3\u20135 days (~90% faster) while preserving every required review and control. Executed 343 campaigns at a near-zero error rate, a department high."},
     activation:  {num:"+40%", label:"Conversion", desc:"Led the post-Toys \u201cR\u201d Us migration \u2014 converted cardholders spent about 40% more than legacy cardholders, proving the portfolio migration and re-engagement strategy worked."},
     engagement:  {num:"7", label:"Lifecycle programs", desc:"Designed and executed lifecycle programs across welcome series, onboarding & activation, behavioral/triggered messaging, retention & upsell, loyalty & advocacy, reactivation/win-back, and ad-hoc campaigns."},
     retention:   {num:"3%", label:"Retention", desc:"Maintained a 3% annual attrition rate while running lifecycle programs across a multi-product card portfolio."},
@@ -636,6 +800,49 @@
         if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(el); }
       });
     });
+  });
+})();
+
+(function(){
+  var listBefore = document.getElementById('wf-steps-before');
+  var listAfter = document.getElementById('wf-steps-after');
+  var note = document.getElementById('wf-note');
+  var num = document.getElementById('wf-stat-num');
+  var sub = document.getElementById('wf-stat-sub');
+  var lbl = document.getElementById('wf-stat-lbl');
+  var btns = document.querySelectorAll('.wf-btn');
+  if(!listBefore || !listAfter || !btns.length) return;
+  var views = {
+    before: {
+      num:'~4 weeks', sub:'≈20 steps · single path',
+      lbl:'One blocked step halts every step behind it — zero parallel paths.',
+      note:'⛔ &nbsp;<span>One incomplete step stopped the entire chain — and a segmentation request submitted out of order didn’t just delay a campaign, it could cancel it outright.</span>'
+    },
+    after: {
+      num:'3–5 days', sub:'10 steps · parallel lanes',
+      lbl:'Same required reviews, controls &amp; quality standards — now running concurrently.',
+      note:'✅ &nbsp;<span>A delay in one lane no longer stalls the rest. Missing segmentation data triggered a pre-agreed expedite path instead of a cancellation — other campaigns shifted to accommodate it, with the concessions known upfront.</span>'
+    }
+  };
+  function setView(key){
+    var isAfter = key === 'after';
+    listBefore.hidden = isAfter;
+    listAfter.hidden = !isAfter;
+    num.textContent = views[key].num;
+    num.classList.toggle('after', isAfter);
+    sub.textContent = views[key].sub;
+    lbl.innerHTML = views[key].lbl;
+    note.innerHTML = views[key].note;
+    note.classList.toggle('wf-note-before', !isAfter);
+    note.classList.toggle('wf-note-after', isAfter);
+    btns.forEach(function(b){
+      var active = b.getAttribute('data-view') === key;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ setView(b.getAttribute('data-view')); });
   });
 })();
 
