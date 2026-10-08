@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Denise R. Smith — Brand &amp; Lifecycle Marketing Lead</title>
+<title>Denise R. Smith — Senior Lifecycle Marketing Leader</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -112,135 +112,12 @@
 
   /* METRICS STRIP */
   .metrics{background:var(--paper);border-bottom:1px solid var(--line);}
-  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px 0;padding:36px 0;}
-  .metric{padding:16px 20px 0;border-top:1px solid var(--line);}
-  .metric .num{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:25px;color:var(--ink);letter-spacing:-0.01em;}
+  .metrics-grid{display:grid;grid-template-columns:repeat(5,1fr);padding:36px 0;}
+  .metric{padding:0 20px;border-left:1px solid var(--line);}
+  .metric:first-child{border-left:none;padding-left:0;}
+  .metric .num{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:27px;color:var(--ink);letter-spacing:-0.01em;}
   .metric .num em{color:var(--ember);font-style:normal;}
   .metric .lbl{font-size:12.5px;color:var(--slate);margin-top:6px;line-height:1.4;}
-
-  /* WORKFLOW REDESIGN SPOTLIGHT */
-  .process-spotlight{background:#FFFDF9;}
-  .spotlight-lede{font-size:14px;line-height:1.65;color:var(--slate);margin:0 0 20px;}
-  .wf-grid{display:grid;grid-template-columns:1fr 220px;gap:32px;align-items:start;}
-  .wf-toggle{display:flex;gap:8px;margin-bottom:16px;}
-  .wf-btn{
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.03em;
-    padding:8px 15px;border-radius:20px;border:1px solid var(--line);
-    background:var(--paper-dim);color:var(--graphite);cursor:pointer;
-    transition:background .15s ease,color .15s ease,border-color .15s ease;
-  }
-  .wf-btn:hover{border-color:var(--teal);}
-  .wf-btn.active{background:var(--teal-deep);color:#FAF7F1;border-color:var(--teal-deep);}
-  .wf-steps{list-style:none;margin:0;padding:0;counter-reset:step;}
-  .wf-steps[hidden]{display:none;}
-  .wf-steps li{
-    position:relative;padding:7px 12px 7px 38px;font-size:12.5px;color:var(--graphite);
-    border-left:2px solid var(--line);margin-left:11px;transition:border-color .3s ease;
-  }
-  .wf-steps li::before{
-    counter-increment:step;content:counter(step);position:absolute;left:-12px;top:5px;
-    width:19px;height:19px;border-radius:50%;background:var(--paper);border:2px solid var(--slate);
-    color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:9.5px;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .wf-steps li:last-child{border-left-color:transparent;}
-  /* before: bottleneck chain — any broken link stops everything downstream */
-  .wf-before li{border-left-color:var(--ember);}
-  .wf-before li::before{border-color:var(--ember-deep);background:#FBEAE0;color:var(--ember-deep);}
-  /* after: condensed, parallel lanes */
-  .wf-after li{border-left-color:var(--teal);border-left-style:dashed;}
-  .wf-after li::before{border-color:var(--teal-deep);background:var(--teal-deep);color:#FAF7F1;}
-  .wf-par{
-    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.05em;
-    text-transform:uppercase;color:var(--teal-deep);margin-left:8px;
-  }
-  .wf-gate{
-    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.05em;
-    text-transform:uppercase;color:var(--ember-deep);margin-left:8px;
-  }
-  .wf-gate-pill{
-    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.03em;
-    text-transform:uppercase;color:var(--ember-deep);background:#FBEAE0;
-    border:1px solid rgba(168,88,28,0.3);border-radius:10px;padding:2px 8px;margin-left:8px;
-  }
-  .wf-win{
-    display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;
-    padding:16px 20px;margin:0 0 18px;border-radius:8px;
-    background:linear-gradient(90deg,rgba(31,138,110,0.12),rgba(217,119,46,0.08));
-    border:1px solid rgba(21,92,74,0.2);
-  }
-  .wf-win-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;color:var(--ink);}
-  .wf-win-arrow{color:var(--ember);margin:0 4px;}
-  .wf-win-sub{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.03em;color:var(--teal-deep);}
-  .wf-diagnosis{
-    border:1px dashed rgba(168,88,28,0.35);border-radius:8px;background:#FFF9F2;
-    padding:16px 18px;margin:0 0 22px;
-  }
-  .wf-diagnosis-tag{
-    display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--ember-deep);margin-bottom:8px;
-  }
-  .wf-diagnosis p{font-size:13.5px;line-height:1.65;color:var(--graphite);margin:0;}
-  .wf-diagnosis strong{color:var(--ink);}
-  .wf-counterfactual{
-    font-size:12.5px;line-height:1.6;color:var(--slate);font-style:italic;
-    margin:8px 0 0;padding-top:8px;border-top:1px dashed rgba(168,88,28,0.25);
-  }
-  .wf-note{
-    display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.55;
-    border-radius:6px;padding:11px 14px;margin:14px 0 0;
-  }
-  .wf-note-before{background:#FBEAE0;color:var(--ember-deep);border:1px solid rgba(168,88,28,0.25);}
-  .wf-note-after{background:rgba(31,138,110,0.1);color:var(--teal-deep);border:1px solid rgba(21,92,74,0.25);}
-  .wf-stat-box{
-    border:1px solid var(--line);border-radius:8px;padding:20px 18px;background:var(--paper-dim);
-    text-align:center;position:sticky;top:20px;
-  }
-  .wf-stat-num{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:30px;color:var(--ink);transition:opacity .2s ease;}
-  .wf-stat-num.after{color:var(--teal-deep);}
-  .wf-stat-sub{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--slate);margin-top:4px;}
-  .wf-stat-arrow{font-size:13px;color:var(--ember);margin:6px 0;}
-  .wf-stat-lbl{font-size:12px;color:var(--slate);line-height:1.5;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
-  .wf-quote{
-    font-family:'Space Grotesk',sans-serif;font-size:15.5px;font-style:italic;color:var(--ink);
-    margin:22px 0 14px;padding-left:16px;border-left:3px solid var(--ember);
-  }
-  .wf-footnote{font-size:13px;color:var(--graphite);line-height:1.6;}
-  .wf-footnote strong{color:var(--ink);}
-  @media (max-width:640px){.wf-grid{grid-template-columns:1fr;}.wf-stat-box{position:static;}}
-
-  /* PARTNERSHIP SPOTLIGHT */
-  .spotlight{margin-top:28px;border:1px solid var(--line);border-radius:8px;padding:26px 28px;background:#FFFDF9;}
-  .spotlight-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
-  .spotlight-head h4{font-family:'Space Grotesk',sans-serif;font-size:16px;color:var(--ink);margin:0;}
-  .spotlight-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ember-deep);background:#FBEAE0;border-radius:3px;padding:4px 9px;}
-  .spotlight-steps{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
-  .spotlight-step{
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.02em;
-    border:1px solid var(--line);border-radius:20px;padding:8px 16px;
-    background:var(--paper-dim);color:var(--graphite);cursor:pointer;
-    transition:background .15s ease,color .15s ease,border-color .15s ease;
-  }
-  .spotlight-step:hover{border-color:var(--teal);}
-  .spotlight-step.active{background:var(--teal-deep);color:#FAF7F1;border-color:var(--teal-deep);}
-  .spotlight-detail{font-size:14.5px;line-height:1.7;color:var(--graphite);min-height:70px;}
-  .spotlight-detail strong{color:var(--ink);}
-
-  /* STORE CHIPS */
-  .store-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px;}
-  .store-chip{
-    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.02em;
-    border:1px solid var(--line);border-radius:4px;padding:5px 10px;color:var(--teal-deep);background:var(--paper-dim);
-  }
-
-  /* QUOTE-TO-BIND BAR */
-  .qtb{margin-top:16px;}
-  .qtb-label{display:flex;justify-content:space-between;font-size:12.5px;color:var(--slate);margin-bottom:6px;}
-  .qtb-label strong{color:var(--ink);font-weight:600;}
-  .qtb-track{position:relative;height:8px;border-radius:4px;background:var(--paper-dim);border:1px solid var(--line);overflow:hidden;}
-  .qtb-fill{position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--ember));transition:width 1.1s cubic-bezier(.22,.9,.3,1);}
-  .qtb-fill.grown{width:var(--qtb-end,25%);}
-  .qtb-marker{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.35;}
 
   /* SECTION GENERIC */
   section{padding:76px 0;}
@@ -312,6 +189,8 @@
     .hero-inner{grid-template-columns:1fr;padding-bottom:48px;}
     .hero h1{font-size:38px;}
     .metrics-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .metric{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:16px;}
+    .metric:nth-child(odd){padding-right:16px;}
     .section-head{grid-template-columns:1fr;gap:14px;}
     .platform-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:32px;}
@@ -336,12 +215,12 @@
 <header class="hero">
   <div class="wrap hero-inner">
     <div>
-      <span class="eyebrow on-ink">Brand &amp; Lifecycle Marketing Lead</span>
+      <span class="eyebrow on-ink">Senior lifecycle marketing leader</span>
       <h1>Denise R. <span>Smith</span></h1>
-      <p class="hero-sub">15+ years building full-funnel lifecycle programs that move customers from first touch to top-of-wallet loyalty, accountable to pipeline and revenue, not just engagement.</p>
+      <p class="hero-sub">15+ years building full-funnel lifecycle programs that move customers from first touch to top-of-wallet loyalty — accountable to pipeline and revenue, not just engagement.</p>
       <div class="hero-disciplines">PIPELINE &amp; REVENUE GROWTH<span class="dot">·</span>CRM &amp; LOYALTY STRATEGY<span class="dot">·</span>LEAD &amp; DEMAND GEN<span class="dot">·</span>SAAS MARKETING<span class="dot">·</span>B2B &amp; B2C</div>
       <div class="cta-row">
-        <a class="btn btn-primary" href="DRS_MKTP_2026.pdf" download>
+        <a class="btn btn-primary" href="DRS_MKTGP_2026.pdf" download>
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download résumé
         </a>
@@ -406,11 +285,7 @@
     <div class="metric"><div class="num">+<em>40%</em></div><div class="lbl">Higher spend from migrated cardholders post Toys "R" Us transition</div></div>
     <div class="metric"><div class="num">+<em>25%</em></div><div class="lbl">Gross profit growth delivered in 9 months at K&amp;E Cleaning</div></div>
     <div class="metric"><div class="num"><em>3%</em></div><div class="lbl">Annual attrition rate sustained across a multi-product card portfolio</div></div>
-        <div class="metric"><div class="num"><em>10,000s</em></div><div class="lbl">Email campaigns executed with a near-zero error rate</div></div>
-    <div class="metric"><div class="num"><em>1st</em></div><div class="lbl">Native Ratings &amp; Reviews integration brokered &amp; launched with Yotpo on the Synchrony Mastercard portfolio</div></div>
-    <div class="metric"><div class="num">20 → <em>25%</em></div><div class="lbl">Quote-to-bind ratio lift driven by live coaching across a 4-store Acceptance Insurance cluster</div></div>
-    <div class="metric"><div class="num"><em>4</em></div><div class="lbl">Self-directed AI prototypes shipped at ConstructConnect using custom MCP integrations</div></div>
-    <div class="metric"><div class="num"><em>90%</em></div><div class="lbl">Faster speed-to-market from a workflow redesign — same reviews, same rigor, run concurrently</div></div>
+    <div class="metric"><div class="num"><em>343</em></div><div class="lbl">Email campaigns executed with a zero-error rate</div></div>
   </div>
 </section>
 
@@ -434,32 +309,15 @@
     <div class="timeline">
 
       <div class="role">
-        <span class="role-badge">Self-directed AI initiative</span>
         <div class="role-top">
-          <div class="role-title">Content Specialist &amp; Marketing Intelligence Contributor — Extended Scope</div>
+          <div class="role-title">Content Specialist &amp; Marketing Intelligence Contributor</div>
           <div class="role-dates">Jan 2025 – Present</div>
         </div>
         <div class="role-co">ConstructConnect · Atlanta, GA (Remote) · SaaS</div>
         <ul>
-          <li>Independently built AI-powered prototypes to surface ROI across pre-construction workflows — automated estimating support, lead research automation, content productivity tooling, and project value forecasting — advancing proof-of-concept for AI integration into core construction intelligence products.</li>
-          <li>Developed logic, prompts, and MCPs (Model Context Protocol integrations) from the ground up to automate lead research and content workflows, and built dashboards to visualize pipeline intelligence, audience behavior, and performance metrics.</li>
-          <li>Partners cross-functionally with marketing, training, and product teams to connect AI-surfaced insight to actionable brand, marketing, and operational strategy recommendations.</li>
+          <li>Builds stakeholder relationships and manages full project-lifecycle data — a consultative model directly analogous to CRM pipeline and journey mapping.</li>
+          <li>Partners cross-functionally with marketing and product on audience insight and digital growth strategy inside a subscription SaaS platform.</li>
         </ul>
-
-        <div class="spotlight">
-          <div class="spotlight-head">
-            <h4>AI Prototyping Lab — MCPs, estimating &amp; ROI tools</h4>
-            <span class="spotlight-tag">Beyond role scope</span>
-          </div>
-          <div class="spotlight-steps">
-            <span class="spotlight-step active" tabindex="0" role="button" aria-label="Estimating ROI prototype" data-detail="Built AI-powered prototypes to surface ROI across pre-construction workflows, including automated estimating support — then partnered with product, training, and marketing teams to validate proof-of-concept for AI integration into core construction intelligence products.">Estimating ROI</span>
-            <span class="spotlight-step" tabindex="0" role="button" aria-label="Lead research MCPs prototype" data-detail="Developed logic, prompts, and MCPs (Model Context Protocol integrations) from the ground up to automate lead research workflows, then collaborated with team management to refine input/output quality for clients.">Lead Research MCPs</span>
-            <span class="spotlight-step" tabindex="0" role="button" aria-label="Content productivity prototype" data-detail="Built content productivity tooling and brand-adjacent content frameworks informed by ICP research and customer pain points across the construction technology space.">Content Productivity</span>
-            <span class="spotlight-step" tabindex="0" role="button" aria-label="Project value forecasting prototype" data-detail="Prototyped project value forecasting tools that translate full construction project-lifecycle data (pre-design through post-bid) into forward-looking signal — extending proof-of-concept beyond marketing into product strategy.">Value Forecasting</span>
-            <span class="spotlight-step" tabindex="0" role="button" aria-label="Pipeline dashboards prototype" data-detail="Built dashboards to visualize pipeline intelligence, audience behavior, and performance metrics — partnering with marketing, training, and product teams to convert insight into actionable strategy recommendations.">Pipeline Dashboards</span>
-          </div>
-          <p class="spotlight-detail">Built AI-powered prototypes to surface ROI across pre-construction workflows, including automated estimating support — then partnered with product, training, and marketing teams to validate proof-of-concept for AI integration into core construction intelligence products.</p>
-        </div>
       </div>
 
       <div class="role">
@@ -487,21 +345,7 @@
           <li>Led migration strategy following the Toys "R" Us liquidation — converted cardholders spent ~40% more than legacy cardholders.</li>
           <li>Lifted email open rates 10% and click-through 4% through segmentation, personalization, and rigorous A/B testing.</li>
           <li>Revamped lifecycle communication workflow architecture, improving speed-to-market across onboarding, engagement, and win-back journeys.</li>
-          <li>Brokered and closed a strategic contract with Yotpo, delivering the platform's first native Ratings &amp; Reviews integration for the Synchrony Mastercard 2% and 1% products — strengthening customer trust and conversion.</li>
         </ul>
-
-        <div class="spotlight">
-          <div class="spotlight-head">
-            <h4>Featured partnership — Yotpo Ratings &amp; Reviews</h4>
-            <span class="spotlight-tag">First-of-platform</span>
-          </div>
-          <div class="spotlight-steps">
-            <span class="spotlight-step active" tabindex="0" role="button" aria-label="Broker and Negotiate step" data-detail="Negotiated and closed a strategic software contract with Yotpo, spearheading the integration of user-generated content (UGC) to enhance product credibility and surface direct cardholder sentiment on the Synchrony Mastercard portfolio.">1 · Broker &amp; Negotiate</span>
-            <span class="spotlight-step" tabindex="0" role="button" aria-label="Build and Integrate step" data-detail="Led end-to-end integration of Ratings &amp; Reviews — building social proof templates, review syndication, custom review forms, and core API workflows directly into the Synchrony Mastercard 2% and 1% products.">2 · Build &amp; Integrate</span>
-            <span class="spotlight-step" tabindex="0" role="button" aria-label="Launch and Result step" data-detail="Delivered the platform's first successful Yotpo implementation, establishing a foundational partnership and a new pipeline for authentic customer feedback shown to build trust and drive conversion.">3 · Launch &amp; Result</span>
-          </div>
-          <p class="spotlight-detail">Negotiated and closed a strategic software contract with Yotpo, spearheading the integration of user-generated content (UGC) to enhance product credibility and surface direct cardholder sentiment on the Synchrony Mastercard portfolio.</p>
-        </div>
       </div>
 
       <div class="role">
@@ -511,111 +355,34 @@
         </div>
         <div class="role-co">Synchrony · Atlanta, GA (Remote)</div>
         <ul>
-          <li>Redesigned the email production workflow from sequential to concurrent execution, cutting speed-to-market from ~4 weeks to 3–5 days (~90% faster) while preserving every required review and control.</li>
-          <li>Executed tens of thousands of email campaigns with a near-zero error rate — demonstrating operational excellence in a demanding, high-volume marketing environment.</li>
+          <li>Cut email speed-to-market from 4 weeks to 2, and cycle time from a 28-day SLA to 5 days or less.</li>
+          <li>Executed 343 client email campaigns with a zero-error rate — a department high.</li>
         </ul>
-
-        <div class="spotlight process-spotlight">
-          <div class="spotlight-head">
-            <h4>Featured case study — disrupt the dependencies, not the requirements</h4>
-            <span class="spotlight-tag">~90% faster speed-to-market</span>
-          </div>
-
-          <div class="wf-win">
-            <div class="wf-win-num">4 weeks <span class="wf-win-arrow">→</span> 3–5 days</div>
-            <div class="wf-win-sub">~90% faster speed-to-market · same required reviews, controls &amp; quality standards</div>
-          </div>
-
-          <p class="spotlight-lede">The old process was a single unbroken chain — 16 handoffs, ~20 steps counting rework loops, and one blocked step stalled every step behind it. Nobody had ever asked which of those 16 steps actually had to happen in order.</p>
-
-          <div class="wf-diagnosis">
-            <span class="wf-diagnosis-tag">The diagnosis — real dependency vs. inherited habit</span>
-            <p>I audited all 16 phases and found only <strong>4 true hard gates</strong> — Data/Segmentation Requirements, Legal Review, Compliance Review, and Final Approval — that legitimately required specific inputs or sign-off before the next step could begin. The other 12 were running in sequence purely because that's how the process had always been built, not because anything required it. <span class="wf-gate">■ hard gate</span> marks the real constraints below; everything else was free to move.</p>
-            <p class="wf-counterfactual">Left unchallenged, that distinction would never have surfaced — the same ~20-step, ~4-week relay would still be running today, campaign after campaign, simply because "that's the process."</p>
-          </div>
-
-          <div class="wf-grid">
-            <div>
-              <div class="wf-toggle" role="tablist" aria-label="Compare sequential and concurrent workflow">
-                <button class="wf-btn" type="button" data-view="before" role="tab" aria-selected="false">Before · Sequential (~20 steps)</button>
-                <button class="wf-btn active" type="button" data-view="after" role="tab" aria-selected="true">After · Concurrent (10 steps) — the result</button>
-              </div>
-
-              <ol class="wf-steps wf-before" id="wf-steps-before" hidden>
-                <li>Request Intake</li>
-                <li>Brief &amp; Strategy</li>
-                <li>Data / Segmentation Requirements<span class="wf-gate-pill">⚠ miss it, campaign cancels</span></li>
-                <li>Content Development</li>
-                <li>Internal Reviews</li>
-                <li>Design &amp; Build</li>
-                <li>Legal Review<span class="wf-gate">■ hard gate</span></li>
-                <li>Compliance Review<span class="wf-gate">■ hard gate</span></li>
-                <li>Proofing</li>
-                <li>Final Approval<span class="wf-gate">■ hard gate</span></li>
-                <li>QA Testing</li>
-                <li>Deployment Prep</li>
-                <li>Schedule &amp; Send</li>
-                <li>Reporting &amp; Analysis</li>
-                <li>Optimization</li>
-                <li>Client Feedback</li>
-              </ol>
-
-              <ol class="wf-steps wf-after" id="wf-steps-after">
-                <li>Request / Intake</li>
-                <li>Brief, Strategy &amp; Content Development<span class="wf-par">∥ parallel</span></li>
-                <li>Data / Segmentation Requirements<span class="wf-gate-pill">■ expedite path available</span></li>
-                <li>Internal Reviews<span class="wf-par">∥ parallel</span></li>
-                <li>Design &amp; Build<span class="wf-par">∥ parallel</span></li>
-                <li>Legal &amp; Compliance Review<span class="wf-gate">■ hard gate — kept sequential</span></li>
-                <li>Proofing &amp; Final Approval<span class="wf-gate">■ hard gate — kept sequential</span></li>
-                <li>QA Testing &amp; Deployment Prep<span class="wf-par">∥ parallel</span></li>
-                <li>Schedule &amp; Send<span class="wf-par">∥ parallel</span></li>
-                <li>Reporting, Analysis, Optimization &amp; Feedback<span class="wf-par">∥ parallel</span></li>
-              </ol>
-
-              <p class="wf-note wf-note-after" id="wf-note">✅ &nbsp;<span>A delay in one lane no longer stalls the rest. Missing segmentation data triggered a pre-agreed expedite path instead of a cancellation — other campaigns shifted to accommodate it, with the concessions known upfront.</span></p>
-            </div>
-            <div class="wf-stat-box">
-              <div class="wf-stat-num after" id="wf-stat-num">3–5 days</div>
-              <div class="wf-stat-sub" id="wf-stat-sub">10 steps · parallel lanes</div>
-              <div class="wf-stat-arrow">↑</div>
-              <div class="wf-stat-lbl" id="wf-stat-lbl">Same required reviews, controls &amp; quality standards — now running concurrently.</div>
-            </div>
-          </div>
-
-          <p class="wf-quote">"Working smarter isn't always doing less. Sometimes it's seeing the work differently."</p>
-          <div class="wf-footnote"><strong>Client impact:</strong> the 4 real hard gates stayed fully intact — every required review, control, and quality standard was preserved. Missing segmentation data no longer meant cancellation: a pre-agreed expedite path let other campaigns in the portfolio shift to accommodate it, with the concessions and exceptions known upfront rather than improvised. Clients valued the speed and responsiveness so much that elements of the expedited workflow were adopted into the standard process.</div>
-        </div>
       </div>
 
       <div class="role">
-        <span class="role-badge">4-store cluster leadership</span>
         <div class="role-top">
-          <div class="role-title">District Sales Manager, Property &amp; Casualty</div>
-          <div class="role-dates">Jul 2014 – Oct 2015</div>
+          <div class="role-title">Email &amp; ESP Platform Manager</div>
+          <div class="role-dates">Jun 2012 – Dec 2013</div>
         </div>
-        <div class="role-co">Acceptance Insurance · Atlanta, GA · Metro Atlanta cluster</div>
+        <div class="role-co">RentPath · Atlanta, GA (Hybrid) · ApartmentGuide.com, Homes.com, Rent.com</div>
         <ul>
-          <li>Directed day-to-day sales performance across a 4-store Metro Atlanta cluster, spending 70% of the week in-market delivering live side-by-side coaching and post-visit action plans.</li>
-          <li>Shifted store management focus to leading indicators — building grassroots B2B referral pipelines with local dealerships, body shops, tow companies, and apartment complexes, and instituting a mandatory daily "Power Hour" outbound-calling block.</li>
-          <li>Reduced policy attrition through a proactive 3-day/7-day grace-call system and a continuously recruited "talent bench," while coaching store managers to independently run daily huddles and own P&amp;L review.</li>
+          <li>Led email marketing strategy, deliverability, and lead generation across three consumer digital brands, managing a team responsible for platform execution and campaign performance.</li>
+          <li>Owned A/B testing, segmentation, personalization, and template optimization; delivered monthly performance reporting and data-driven recommendations to senior stakeholders.</li>
+          <li>Managed full ESP platform vendor migration across all three brands — coordinating stakeholder communication, timelines, and process improvements through every transition phase.</li>
         </ul>
-        <div class="qtb" id="qtb-block">
-          <div class="qtb-label"><span>Quote-to-bind ratio, live coaching impact</span><strong id="qtb-value">20% → 25%</strong></div>
-          <div class="qtb-track"><div class="qtb-fill" id="qtb-fill" style="--qtb-end:25%"></div></div>
-        </div>
       </div>
 
       <div class="early-career">
         <div class="early-role">
-          <div class="t">Licensed Agent, Property &amp; Casualty</div>
-          <div class="c">Acceptance Insurance · Atlanta, GA</div>
-          <div class="d">Dec 2013 – Jul 2014</div>
+          <div class="t">District Sales Manager, Property &amp; Casualty</div>
+          <div class="c">Acceptance Insurance · Atlanta, GA — Directed day-to-day sales performance across a 4-store Metro Atlanta cluster; moved quote-to-bind ratio from 20% to 25% through live coaching and post-visit action plans; reduced attrition via proactive grace-call system</div>
+          <div class="d">Jul 2014 – Oct 2015</div>
         </div>
         <div class="early-role">
-          <div class="t">Email Manager, Digital Marketing</div>
-          <div class="c">RentPath · Atlanta, GA</div>
-          <div class="d">Jun 2012 – Dec 2013</div>
+          <div class="t">Licensed Agent, Property &amp; Casualty</div>
+          <div class="c">Acceptance Insurance · Atlanta, GA — Expanded business book by 209 accounts in five months; increased retail revenue sales by 12.8% and renewal rate by 3.5% through acquisition marketing and customer retention strategies</div>
+          <div class="d">Dec 2013 – Jul 2014</div>
         </div>
         <div class="early-role">
           <div class="t">Senior Email Manager, Digital Marketing</div>
@@ -656,7 +423,6 @@
       <span class="pill">Agency &amp; vendor management</span>
       <span class="pill">CAN-SPAM / deliverability</span>
       <span class="pill">Cross-functional leadership</span>
-      <span class="pill">AI-driven marketing prototyping</span>
     </div>
   </div>
 </section>
@@ -668,12 +434,12 @@
       <p class="lede">Hands-on across the CRM, ESP, deliverability, and analytics stack — agency-side and client-side.</p>
     </div>
     <div class="platform-grid">
-      <div class="platform-cat"><h3>Marketing &amp; CRM</h3><p>Salesforce Marketing Cloud (SFMC), Aprimo, Salesforce Account Engagement (Pardot), Mediaocean, SharePoint</p></div>
-      <div class="platform-cat"><h3>Email service providers</h3><p>Adobe Campaign, Acoustic Campaign, Epsilon Harmony, Oracle Responsys, NCR Atleos (Banking)</p></div>
+      <div class="platform-cat"><h3>Marketing &amp; CRM</h3><p>Salesforce Marketing Cloud (SFMC), Aprimo, Salesforce CRM, Mediaocean, Movable Ink, Hootsuite, Survey Monkey, Adobe Workfront, SharePoint</p></div>
+      <div class="platform-cat"><h3>Email service providers</h3><p>Adobe Campaign, Acoustic Campaign, Epsilon Harmony, Oracle Responsys, NCR Atleos</p></div>
       <div class="platform-cat"><h3>Email quality &amp; deliverability</h3><p>Litmus, ReturnPath, Email on Acid, BriteVerify (Validity), MxToolbox</p></div>
-      <div class="platform-cat"><h3>Analytics &amp; reporting</h3><p>Tableau, Power BI, Google Workspace, Microsoft Office</p></div>
-      <div class="platform-cat"><h3>SaaS platforms</h3><p>Yotpo, Movable Ink, Adobe Creative Cloud, Canva, SundaySky, Hootsuite, Survey Monkey, Adobe Workfront</p></div>
-      <div class="platform-cat"><h3>AI &amp; research</h3><p>Microsoft Copilot, Glean, Perplexity, Claude, custom MCP (Model Context Protocol) tooling · HTML (basic)</p></div>
+      <div class="platform-cat"><h3>Analytics &amp; reporting</h3><p>Tableau, Power BI, Google Suite, Microsoft Office</p></div>
+      <div class="platform-cat"><h3>Creative &amp; design</h3><p>Adobe Creative Cloud, Canva, SundaySky</p></div>
+      <div class="platform-cat"><h3>AI &amp; research</h3><p>Microsoft Copilot, Glean, Perplexity, Claude · HTML (basic)</p></div>
     </div>
   </div>
 </section>
@@ -697,7 +463,7 @@
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.5"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="1.5"/></svg>
           LinkedIn profile
         </a>
-        <a href="DRS_MKTP_2026.pdf" download>
+        <a href="DRS_MKTGP_2026.pdf" download>
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download full résumé (PDF)
         </a>
@@ -727,7 +493,7 @@
 (function(){
   var stageData = {
     acquisition: {num:"1 \u2192 3", label:"Acquisition", desc:"Founding team member on the Synchrony Mastercard launch \u2014 grew the portfolio from 1 product in year one to 3 products as the business scaled."},
-    onboarding:  {num:"3–5 days", label:"Onboarding", desc:"Redesigned the email production workflow from sequential to concurrent execution — cutting speed-to-market from ~4 weeks to 3–5 days (~90% faster) while preserving every required review and control. Executed tens of thousands of email campaigns with a near-zero error rate — demonstrating operational excellence in a demanding, high-volume marketing environment."},
+    onboarding:  {num:"5 days", label:"Onboarding", desc:"Cut email speed-to-market from 4 weeks to 2, and cycle time from a 28-day SLA to 5 days \u2014 letting clients mirror in-store offers in near real time. Executed tens of thousands of email campaigns at a zero-error rate, a department high."},
     activation:  {num:"+40%", label:"Conversion", desc:"Led the post-Toys \u201cR\u201d Us migration \u2014 converted cardholders spent about 40% more than legacy cardholders, proving the portfolio migration and re-engagement strategy worked."},
     engagement:  {num:"7", label:"Lifecycle programs", desc:"Designed and executed lifecycle programs across welcome series, onboarding & activation, behavioral/triggered messaging, retention & upsell, loyalty & advocacy, reactivation/win-back, and ad-hoc campaigns."},
     retention:   {num:"3%", label:"Retention", desc:"Maintained a 3% annual attrition rate while running lifecycle programs across a multi-product card portfolio."},
@@ -783,86 +549,6 @@
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); }
     });
   });
-})();
-
-(function(){
-  document.querySelectorAll('.spotlight').forEach(function(box){
-    var steps = box.querySelectorAll('.spotlight-step');
-    var detail = box.querySelector('.spotlight-detail');
-    if(!steps.length || !detail) return;
-    function activate(el){
-      steps.forEach(function(s){ s.classList.remove('active'); });
-      el.classList.add('active');
-      detail.textContent = el.getAttribute('data-detail');
-    }
-    steps.forEach(function(el){
-      el.addEventListener('click', function(){ activate(el); });
-      el.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(el); }
-      });
-    });
-  });
-})();
-
-(function(){
-  var listBefore = document.getElementById('wf-steps-before');
-  var listAfter = document.getElementById('wf-steps-after');
-  var note = document.getElementById('wf-note');
-  var num = document.getElementById('wf-stat-num');
-  var sub = document.getElementById('wf-stat-sub');
-  var lbl = document.getElementById('wf-stat-lbl');
-  var btns = document.querySelectorAll('.wf-btn');
-  if(!listBefore || !listAfter || !btns.length) return;
-  var views = {
-    before: {
-      num:'~4 weeks', sub:'≈20 steps · single path',
-      lbl:'One blocked step halts every step behind it — zero parallel paths.',
-      note:'⛔ &nbsp;<span>One incomplete step stopped the entire chain — and a segmentation request submitted out of order didn’t just delay a campaign, it could cancel it outright.</span>'
-    },
-    after: {
-      num:'3–5 days', sub:'10 steps · parallel lanes',
-      lbl:'Same required reviews, controls &amp; quality standards — now running concurrently.',
-      note:'✅ &nbsp;<span>A delay in one lane no longer stalls the rest. Missing segmentation data triggered a pre-agreed expedite path instead of a cancellation — other campaigns shifted to accommodate it, with the concessions known upfront.</span>'
-    }
-  };
-  function setView(key){
-    var isAfter = key === 'after';
-    listBefore.hidden = isAfter;
-    listAfter.hidden = !isAfter;
-    num.textContent = views[key].num;
-    num.classList.toggle('after', isAfter);
-    sub.textContent = views[key].sub;
-    lbl.innerHTML = views[key].lbl;
-    note.innerHTML = views[key].note;
-    note.classList.toggle('wf-note-before', !isAfter);
-    note.classList.toggle('wf-note-after', isAfter);
-    btns.forEach(function(b){
-      var active = b.getAttribute('data-view') === key;
-      b.classList.toggle('active', active);
-      b.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-  }
-  btns.forEach(function(b){
-    b.addEventListener('click', function(){ setView(b.getAttribute('data-view')); });
-  });
-})();
-
-(function(){
-  var fill = document.getElementById('qtb-fill');
-  if(!fill) return;
-  if('IntersectionObserver' in window){
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          fill.classList.add('grown');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.4});
-    obs.observe(fill);
-  } else {
-    fill.classList.add('grown');
-  }
 })();
 </script>
 </body>
